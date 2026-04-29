@@ -168,6 +168,8 @@ project.tsconfig?.file?.patch(
   JsonPatch.add('/compilerOptions/declarationMap', true),
 );
 // Don't try to compile files under the `test/translations` directory with tests...
+project.tsconfigDev.compilerOptions.noUnusedLocals = false;
+project.tsconfigDev.compilerOptions.noUnusedParameters = false;
 project.tsconfigDev.addExclude('test/translations/**/*.ts');
 project.eslint?.addIgnorePattern('test/translations/**/*.ts');
 
